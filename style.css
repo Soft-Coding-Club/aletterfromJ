@@ -76,7 +76,8 @@ button, textarea, input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+  gap: clamp(20px, 4vh, 56px);
   text-align: center;
   padding: 24px;
 }
@@ -125,6 +126,14 @@ button.primary:hover {
   flex-direction: column;
 }
 
+#screen-timer .stack {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  margin: 0;
+  justify-content: flex-end;
+}
+
 .app-footer {
   flex-shrink: 0;
   padding: 24px;
@@ -159,7 +168,8 @@ button.primary:hover {
 }
 
 #minutes-value {
-  font-size: clamp(120px, 42vw, 260px);
+  font-size: clamp(64px, min(40vw, calc(32vh - 60px)), 260px);
+  line-height: 1;
 }
 
 .unit {
@@ -167,10 +177,11 @@ button.primary:hover {
 }
 
 .keypad {
+  container-type: inline-size;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 12px;
-  width: min(1400px, calc(100vw - 48px));
+  width: min(1400px, calc(100vw - 48px), calc(195vh - 323px));
 }
 
 .key {
@@ -183,26 +194,28 @@ button.primary:hover {
   background: none;
   border: 1px solid var(--ink);
   border-radius: 0;
-  font-size: clamp(32px, 9vw, 110px);
+  font-size: clamp(20px, 13cqw, 110px);
+  line-height: 1;
   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
 }
 
 .key:not(.digital) {
-  font-size: clamp(13px, 3.2vw, 28px);
+  font-size: clamp(11px, 5.5cqw, 28px);
 }
 
 @media (max-width: 640px) {
   .keypad {
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
+    width: min(1400px, calc(100vw - 48px), calc(49vh - 90px));
   }
 
   .key {
-    font-size: clamp(44px, 16vw, 90px);
+    font-size: clamp(24px, 22cqw, 90px);
   }
 
   .key:not(.digital) {
-    font-size: clamp(16px, 6vw, 26px);
+    font-size: clamp(12px, 9cqw, 26px);
   }
 }
 
@@ -228,6 +241,7 @@ button.primary:hover {
   grid-column: 2;
   justify-self: center;
   font-size: clamp(48px, 12vw, 88px);
+  line-height: 1;
   letter-spacing: 0.05em;
 }
 
@@ -248,9 +262,9 @@ button.primary:hover {
 }
 
 .letter-paper {
-  flex-shrink: 0;
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: min(700px, 62vh);
   display: flex;
   flex-direction: column;
   background: var(--sheet);
