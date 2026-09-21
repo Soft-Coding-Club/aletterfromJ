@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>letter from J</title>
+<meta name="description" content="set a time, then write a letter.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="letter from J">
+<meta property="og:description" content="set a time, then write a letter.">
+<meta property="og:image" content="img/letterfromJ-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="letter from J">
+<meta name="twitter:description" content="set a time, then write a letter.">
+<meta name="twitter:image" content="img/letterfromJ-og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="app">
+
+  <!-- STEP 1: TIMER -->
+  <section id="screen-timer" class="screen active">
+    <div class="stack">
+      <p class="label">set a time</p>
+
+      <div class="timer-input">
+        <span id="minutes-value" class="digital">00</span>
+        <span class="unit">min</span>
+      </div>
+
+      <div class="keypad" role="group" aria-label="set minutes">
+        <button class="key digital" data-digit="1">1</button>
+        <button class="key digital" data-digit="2">2</button>
+        <button class="key digital" data-digit="3">3</button>
+        <button class="key digital" data-digit="4">4</button>
+        <button class="key digital" data-digit="5">5</button>
+        <button class="key digital" data-digit="6">6</button>
+        <button class="key digital" data-digit="7">7</button>
+        <button class="key digital" data-digit="8">8</button>
+        <button class="key digital" data-digit="9">9</button>
+        <button class="key digital" data-digit="0">0</button>
+        <button id="clear-btn" class="key">clear</button>
+        <button id="start-btn" class="key primary">go</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: LETTER -->
+  <section id="screen-letter" class="screen">
+    <header class="letter-header">
+      <span id="time-left" class="digital">--:--</span>
+      <button id="finish-btn" class="oct">finish</button>
+    </header>
+
+    <div id="letter-pages" class="letter-pages"></div>
+
+    <div id="page-nav" class="page-nav">
+      <button id="prev-page-btn" class="oct nav-btn">prev</button>
+      <span id="page-indicator" class="page-number">1</span>
+      <button id="next-page-btn" class="oct nav-btn">next</button>
+    </div>
+  </section>
+
+  <!-- STEP 3: DONE -->
+  <section id="screen-done" class="screen">
+    <div class="stack">
+      <button id="download-btn" class="oct primary">save letter</button>
+      <button id="restart-btn" class="oct">write another</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
