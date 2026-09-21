@@ -71,11 +71,6 @@ button, textarea, input {
 
 /* ---------- shared ---------- */
 
-.label {
-  margin: 0 0 8px 0;
-  color: var(--muted);
-}
-
 .stack {
   margin: auto;
   display: flex;
