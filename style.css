@@ -55,6 +55,14 @@ button, textarea, input {
   height: 100%;
   width: 100%;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .screen.active {
@@ -118,6 +126,37 @@ button.primary:hover {
 
 /* ---------- screen 1: timer ---------- */
 
+#screen-timer {
+  flex-direction: column;
+}
+
+.app-footer {
+  flex-shrink: 0;
+  padding: 24px;
+  text-align: center;
+}
+
+.app-footer p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.app-footer a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px dotted var(--muted);
+}
+
+.app-footer a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
 .timer-input {
   display: flex;
   align-items: baseline;
@@ -180,7 +219,6 @@ button.primary:hover {
 
 #screen-letter {
   flex-direction: column;
-  overflow-y: hidden;
 }
 
 .letter-header {
@@ -212,7 +250,6 @@ button.primary:hover {
   justify-content: center;
   min-height: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .letter-paper {
@@ -222,7 +259,7 @@ button.primary:hover {
   display: flex;
   flex-direction: column;
   background: var(--sheet);
-  padding: 40px 32px;
+  padding: 40px 32px 24px;
   max-width: 640px;
 }
 
@@ -257,9 +294,12 @@ button.primary:hover {
 }
 
 .page-number {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 16px;
   color: var(--muted);
-  min-width: 3em;
   text-align: center;
+  user-select: none;
 }
 
 .nav-btn {

@@ -14,7 +14,6 @@
   const pagesContainer = document.getElementById('letter-pages');
   const prevPageBtn = document.getElementById('prev-page-btn');
   const nextPageBtn = document.getElementById('next-page-btn');
-  const pageIndicatorEl = document.getElementById('page-indicator');
   const downloadBtn = document.getElementById('download-btn');
   const restartBtn = document.getElementById('restart-btn');
 
@@ -107,6 +106,11 @@
     textarea.spellcheck = false;
     root.appendChild(textarea);
 
+    const pageNumEl = document.createElement('div');
+    pageNumEl.className = 'page-number';
+    pageNumEl.textContent = String(num);
+    root.appendChild(pageNumEl);
+
     textarea.addEventListener('input', updateNav);
 
     return { root, textarea, metaEl };
@@ -118,7 +122,6 @@
 
   function updateNav() {
     const total = pages.length;
-    pageIndicatorEl.textContent = total > 1 ? `${currentIndex + 1} / ${total}` : `${currentIndex + 1}`;
 
     prevPageBtn.classList.toggle('visible', currentIndex > 0);
 
