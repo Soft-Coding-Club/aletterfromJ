@@ -136,7 +136,7 @@ button.primary:hover {
   min-height: 0;
   width: 100%;
   margin: 0;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .app-footer {
@@ -277,6 +277,21 @@ button.primary:hover {
   background: var(--sheet);
   padding: 40px 32px 24px;
   max-width: 640px;
+}
+
+@media (max-width: 640px) {
+  .letter-header {
+    padding: 16px 20px;
+  }
+
+  #finish-btn {
+    padding: 6px 12px;
+  }
+
+  .letter-paper {
+    width: calc(100% - 24px);
+    padding: 24px 20px 16px;
+  }
 }
 
 .letter-meta {
