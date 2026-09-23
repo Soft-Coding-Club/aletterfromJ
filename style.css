@@ -132,7 +132,7 @@ button.primary:hover {
 }
 
 #screen-timer .stack {
-  flex-shrink: 0;
+  flex: 1;
   width: 100%;
   margin: 0;
 }
