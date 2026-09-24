@@ -165,7 +165,9 @@ button.primary:hover {
 }
 
 .glyph {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: inline-block;
+  vertical-align: -1px;
+  color: var(--muted);
 }
 
 .timer-input {
